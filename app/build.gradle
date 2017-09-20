@@ -25,6 +25,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     productFlavors {
+        defc{
+
+        }
         pro {
             applicationId = "com.chronocloud.bodyscale"
         }

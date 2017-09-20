@@ -14,8 +14,8 @@ public class ComponentNameUtils {
     private PackageManager packageManager;
 
     public ComponentNameUtils(Context mContext){
-        defCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid");
-        proCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid.MainActivity");
+        defCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid.MainActivity");
+        proCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid.pro");
         freeCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid.free");
         thirdCon = new ComponentName(mContext,"com.example.slee.aboutapplicationid.third");
         packageManager = mContext.getApplicationContext().getPackageManager();
