@@ -24,20 +24,6 @@ android {
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    productFlavors {
-        defc{
-
-        }
-        pro {
-            applicationId = "com.chronocloud.bodyscale"
-        }
-        free {
-            applicationId = "com.chronocloud.chestnut"
-        }
-        third {
-            applicationId = "com.chronocloud.test"
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false

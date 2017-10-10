@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Intent;
 import android.util.Log;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by S.Lee on 2017/9/19 0019.
  */
@@ -18,26 +21,24 @@ public class MyApplication extends Application {
         TAG = getClass().getSimpleName()+"_";
         packageName = getPackageName();
         Log.i(TAG,packageName);
+
+
+
+        Calendar calendar = Calendar.getInstance();
+        int miniut = calendar.get(Calendar.MINUTE);
         ComponentNameUtils componentNameUtils = new ComponentNameUtils(getBaseContext());
-        switch (packageName){
-            case "com.chronocloud.chestnut":
-                componentNameUtils.setComponentName(ComponentNameUtils.FREECON);
-                //startActivity(new Intent().addCategory(Intent.CATEGORY_LAUNCHER));
-                break;
-            case "com.chronocloud.test":
-                componentNameUtils.setComponentName(ComponentNameUtils.THIRDCON);
-              //  startActivity(new Intent().addCategory(Intent.CATEGORY_LAUNCHER));
-                break;
-            case "com.chronocloud.bodyscale":
-                componentNameUtils.setComponentName(ComponentNameUtils.PROCON);
-               // startActivity(new Intent().addCategory(Intent.CATEGORY_LAUNCHER));
-                break;
-            default:
-                componentNameUtils.setComponentName(ComponentNameUtils.DEFCON);
-                break;
+        if(miniut < 15){
+            Log.i("Time:"+miniut+":"+calendar.get(Calendar.SECOND),"<15");
+            componentNameUtils.setComponentName(ComponentNameUtils.FREECON);
+        }else if(miniut < 30){
+            Log.i("Time:"+miniut+":"+calendar.get(Calendar.SECOND),"<30");
+            componentNameUtils.setComponentName(ComponentNameUtils.THIRDCON);
+        }else if(miniut < 45){
+            Log.i("Time:"+miniut+":"+calendar.get(Calendar.SECOND),"<45");
+            componentNameUtils.setComponentName(ComponentNameUtils.PROCON);
+        }else{
+            Log.i("Time:"+miniut+":"+calendar.get(Calendar.SECOND),"else");
+            componentNameUtils.setComponentName(ComponentNameUtils.DEFCON);
         }
-
-
-
     }
 }
